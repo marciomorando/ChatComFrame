@@ -18,7 +18,7 @@ public class ChatComFrame {
     public static void main(String[] args) {
         // TODO code application logic here
          String  ip = (String)JOptionPane.showInputDialog("Informe o IP","192.168.0.");
-        int porta = Integer.parseInt(JOptionPane.showInputDialog("Informe a Porta","5555"));
+        int porta = Integer.parseInt(JOptionPane.showInputDialog("Informe a Porta","4444"));
         
         Conexao c = new Conexao(ip, porta);
         
