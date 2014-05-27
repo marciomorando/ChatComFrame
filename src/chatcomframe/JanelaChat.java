@@ -17,11 +17,13 @@ public class JanelaChat extends javax.swing.JFrame implements Observer {
         this.conexao = conexao;
         initComponents();
         conexao.addObserver(this);
-        escreve("Chat iniciado com " + conexao.getIp() + ":" + conexao.getPorta());
+        escreve("Chat iniciado com USUARIOS:" /*+ conexao.getPorta()*/);
+        ///*+ conexao.getIp() +*/
         mensagemjTextArea.requestFocusInWindow();
     }
 
     private void envia() {
+        
         if (!mensagemjTextArea.getText().isEmpty()) {
             conexao.envia(mensagemjTextArea.getText());
             escreve("Você disse: "+mensagemjTextArea.getText());
@@ -30,6 +32,7 @@ public class JanelaChat extends javax.swing.JFrame implements Observer {
     }
 
     private void escreve(String texto){
+      
         chatjTextArea.append(texto+"\n");
          if (!chatjTextArea.getText().isEmpty() && !chatjTextArea.isFocusOwner()) {
                 chatjTextArea.setCaretPosition(chatjTextArea.getText().length() - 1);
@@ -40,12 +43,19 @@ public class JanelaChat extends javax.swing.JFrame implements Observer {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
-
+        
+        
+        
         jScrollPane1 = new javax.swing.JScrollPane();
         chatjTextArea = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         mensagemjTextArea = new javax.swing.JTextArea();
+        //ALTERAR
+        // mensagemjTextArea.setEditable(false);
+        
+         
         enviarjButton = new javax.swing.JButton();
+        
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,7 +72,8 @@ public class JanelaChat extends javax.swing.JFrame implements Observer {
             }
         });
         jScrollPane2.setViewportView(mensagemjTextArea);
-
+        
+        //enviarjButton.setEnabled(false);
         enviarjButton.setText("Enviar");
         enviarjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

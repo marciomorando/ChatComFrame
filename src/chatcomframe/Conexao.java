@@ -67,7 +67,9 @@ public class Conexao extends Observable {
                     DatagramPacket pacoteRecebido = new DatagramPacket(dadosReceber, dadosReceber.length);
                     try {
                         socket.receive(pacoteRecebido);
-                        byte[] b = pacoteRecebido.getData();
+                        byte[] b = null;
+                        b = pacoteRecebido.getData();
+                        
                         String s = "";
                         for (int i = 0; i < b.length; i++) {
                             if (b[i] != 0) {
