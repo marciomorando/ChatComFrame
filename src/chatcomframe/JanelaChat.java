@@ -23,39 +23,39 @@ public class JanelaChat extends javax.swing.JFrame implements Observer {
     }
 
     private void envia() {
-        
+
         if (!mensagemjTextArea.getText().isEmpty()) {
             conexao.envia(mensagemjTextArea.getText());
-            escreve("Você disse: "+mensagemjTextArea.getText());
+            escreve("Você disse: " + mensagemjTextArea.getText());
             mensagemjTextArea.setText("");
         }
     }
 
-    private void escreve(String texto){
-      
-        chatjTextArea.append(texto+"\n");
-         if (!chatjTextArea.getText().isEmpty() && !chatjTextArea.isFocusOwner()) {
-                chatjTextArea.setCaretPosition(chatjTextArea.getText().length() - 1);
-            }
-        
+    private void escreve(String texto) {
+
+        chatjTextArea.append(texto + "\n");
+        if (!chatjTextArea.getText().isEmpty() && !chatjTextArea.isFocusOwner()) {
+            chatjTextArea.setCaretPosition(chatjTextArea.getText().length() - 1);
+        }
+
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
-        
-        
-        
+
+
+
         jScrollPane1 = new javax.swing.JScrollPane();
         chatjTextArea = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         mensagemjTextArea = new javax.swing.JTextArea();
         //ALTERAR
         // mensagemjTextArea.setEditable(false);
-        
-         
+
+
         enviarjButton = new javax.swing.JButton();
-        
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,7 +72,7 @@ public class JanelaChat extends javax.swing.JFrame implements Observer {
             }
         });
         jScrollPane2.setViewportView(mensagemjTextArea);
-        
+
         //enviarjButton.setEnabled(false);
         enviarjButton.setText("Enviar");
         enviarjButton.addActionListener(new java.awt.event.ActionListener() {
@@ -84,37 +84,34 @@ public class JanelaChat extends javax.swing.JFrame implements Observer {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
-            .addGroup(layout.createSequentialGroup()
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane1)
+                .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enviarjButton, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
-        );
+                .addComponent(enviarjButton, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2)
-                    .addComponent(enviarjButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+                .addComponent(jScrollPane2)
+                .addComponent(enviarjButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)));
 
         pack();
     }// </editor-fold>                        
 
-    private void enviarjButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    private void enviarjButtonActionPerformed(java.awt.event.ActionEvent evt) {
         envia();
-    }                                             
+    }
 
-    private void mensagemjTextAreaKeyReleased(java.awt.event.KeyEvent evt) {                                              
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+    private void mensagemjTextAreaKeyReleased(java.awt.event.KeyEvent evt) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             envia();
         }
-    }                                             
-
+    }
     // Variables declaration - do not modify                     
     private javax.swing.JTextArea chatjTextArea;
     private javax.swing.JButton enviarjButton;

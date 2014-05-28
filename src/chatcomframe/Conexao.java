@@ -69,7 +69,7 @@ public class Conexao extends Observable {
                         socket.receive(pacoteRecebido);
                         byte[] b = null;
                         b = pacoteRecebido.getData();
-                        
+
                         String s = "";
                         for (int i = 0; i < b.length; i++) {
                             if (b[i] != 0) {
