@@ -25,6 +25,6 @@ public class ChatComFrame {
         JanelaChat j = new JanelaChat(c);
         j.setLocationRelativeTo(null);
         j.setVisible(true);
-        //testesteste
+        //Luan Esteve Aki
     }
 }
